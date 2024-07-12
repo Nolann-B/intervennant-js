@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.addEventListener("load", function() {
+            document.getElementById("resultat").innerHTML = "formulaire de connexion";
+
+            document.getElementById("resultat").innerHTML ="<strong>Formulaire</strong> de <i>connexion<i>";
+            this.document.querySelector("#resultat").innerHTML ="modifié avec querySelector";
+
+            let input = document.getElementsByTagName("input");
+            for (let i = 0; i < inputs.length; i++) {
+            inputs[i].style.backgroundColor = "#5ea9ce";
+            }
+
+            document.querySelectorAll("input").forEach(function (elementInput) {
+            elementInput.style.border = "2px solid green";
+            });
+
+            document.querySelector("form").addEventListener("submit", function(evenEvensubmit){
+            /*La méthode preventDefault() qui existe pour tous les objets de type événements, permet d'annuler le comportement par défaut d'un évènement. Par exemple, le comportement par défaut de l'évènement "submit" d'une balise <form> est d'envoyer le formulaire vers l'URL défini dans 'action'. Donc si aucun URL n'est défini dans action, la page est rechargée.
+            
+            Autre exemple : le comportement par défatu de l'évènement "click" sur une balise <a> est de rediriger vers la page définie dans 'href'    */    
+            eventSubmit.preventDefault();
+            let texte = "";
+            document.querySelectorAll("input").forEach(function (inputElement) {
+            texte += inputElement.name + "=" + inputElement.value + "<br>";
+            });
+            console.log(texte);
+            document.querySelector("#resultat").innerHTML = texte;
+            });
+        });
+
+
+    
+
+    </script>
+</head>
+<body>
+    <h1>Formulaire de connexion</h1>
+    <form method="get" action="">
+        <div>
+            <label for="Pseudo">Pseudo</label>
+            <input type="text" name="pseudo" id="pseudo" placeholder="tapez le pseudo">
+        </div>
+        <div>
+            <label for="mdp">MotDePasse</label>
+            <input type="text">
+        </div>
+        <button type="submit">Envoyer</button>
+        <button type="reset">Effacer</button>
+    </form>
+    <hr>
+    <div id="resultat"></div>
+</body>
+</html>
