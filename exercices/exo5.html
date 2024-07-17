@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="fonction.js"></script>
+    <script>
+
+    let couples = [
+        [15,7],
+        [52, 324],
+        [9, 10],
+        [4, -52],
+    ];
+
+    for (let i = 0; i < couples.length; i++){
+        nb1 = couples[i][0];
+        nb2 = couples[i][1];
+        if ( superieur(nb1,nb2)){
+            document.write(nb1 + " est superieur à "+ nb2);
+        }else {
+            document.write(nb1 + " n'est pas superieur à " + nb2)
+        }
+        document.write("<br>");
+    }
+
+document.write("<hr>")
+
+    let couples1 = [
+        [15,7],
+        [52,324],
+        [4,-52],
+        [9,10],
+    ]
+
+    for (let i = 0; i < couples1.length; i++){
+        nb3 = couples1[i][0];
+        nb4 = couples1[i][1];
+
+        let pg = plusGrand(nb3,nb4);
+        document.write( pg + " est plus grand que " + (pg == nb3 ? nb4 : nb3));
+        document.write ("<br>");
+    }
+
+document.write("<hr>")
+
+    let nombres = [ 15, 7, 52, 324, 4, -52, 9, 10 ];
+    let notes = [ 12, 17, 4, 15, 20, 5 ];
+
+
+    let texte = "La plus petite valeur du tableau <i>nombres</i> est";
+    texte += plusPetit(nombres);
+    texte += "<br>";
+
+    document.write(texte);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
